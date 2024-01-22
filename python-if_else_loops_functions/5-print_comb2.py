@@ -2,7 +2,5 @@
 for i in range(0, 100):
     if i == 99:
         print("{:d}".format(i))
-    elif i < 10:
-        print("{:02d}".format(i), end=", ")
     else:
-        print("{:d}".format(i), end=", ")
+        print("{:02d}".format(i), end=", ")
