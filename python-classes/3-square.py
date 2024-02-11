@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Square class"""
+
+
 class Square:
+    """init class Square"""
     def __init__(self, size=0):
         self.__size = size
         if type(size) != int:
