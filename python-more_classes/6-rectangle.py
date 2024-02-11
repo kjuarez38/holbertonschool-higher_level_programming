@@ -5,12 +5,13 @@
 class Rectangle:
     """Rectangle class"""
 
-    n_instances = 0
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
-        Rectangle.n_instances += 1
+        Rectangle.number_of_instances += 1
+        self.number_of_instances = Rectangle.number_of_instances
 
     @property
     def width(self):
@@ -48,8 +49,8 @@ class Rectangle:
         string = ""
         if self.width == 0 or self.height == 0:
             return string
-        for i in range(0, self.height):
-            for j in range(0, self.width):
+        for h in range(0, self.height):
+            for w in range(0, self.width):
                 string += "#"
             string += "\n"
         return string[:-1]
@@ -59,4 +60,5 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        Rectangle.n_instances -= 1
+        Rectangle.number_of_instances -= 1
+        self.number_of_instances = Rectangle.number_of_instances
