@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""Add integer module"""
+"""add integer module"""
 
 
 def add_integer(a, b=98):
-    """Add two integers"""
+    """return integer sum of a and b"""
     try:
-        if not isinstance(a, (int, float)):
+        if isinstance(a, (int, float)) is False:
             raise TypeError("a must be an integer")
-        if not isinstance(b, (int, float)):
+        if isinstance(b, (int, float)) is False:
             raise TypeError("b must be an integer")
         res = int(a) + int(b)
         if res == float('inf') or res == -float('inf'):
@@ -15,3 +15,7 @@ def add_integer(a, b=98):
         return res
     except Exception as e:
         return e
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
