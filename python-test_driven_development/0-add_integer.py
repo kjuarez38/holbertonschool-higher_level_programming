@@ -15,7 +15,3 @@ def add_integer(a, b=98):
         return res
     except Exception as e:
         return e
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
