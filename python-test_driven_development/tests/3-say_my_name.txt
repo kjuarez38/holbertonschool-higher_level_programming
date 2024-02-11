@@ -1,31 +1,21 @@
-"Tests for say_my_name function"
+>>> say_my_name = __import__('3-say_my_name').say_my_name
 
->>> from io import StringIO
->>> import sys
->>> saved_stdout = sys.stdout
->>> sys.stdout = StringIO()
+Now use it:
 
->>> say_my_name("John", "Smith")
-My name is John Smith
+    >>> say_my_name("Hugo", "Holberton")
+    My name is Hugo Holberton
 
->>> say_my_name("Walter", "White")
-My name is Walter White
+    >>> say_my_name("Hugo")
+    My name is Hugo 
+    
+    >>> say_my_name(12, "Holberton")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
 
->>> say_my_name("Bob")
-My name is Bob
+    >>> say_my_name("Hugo", 13)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
 
->>> try:
-...     say_my_name(12, "White")
-... except Exception as e:
-...     print(e)
-first_name must be a string or last_name must be a string
-
->>> try:
-...     say_my_name(12, 12)
-... except Exception as e:
-...     print(e)
-first_name must be a string or last_name must be a string
-
->>> sys.stdout = saved_stdout
->>> sys.stdout.getvalue()
-'My name is John Smith\nMy name is Walter White\nMy name is Bob\nfirst_name must be a string or last_name must be a string\nfirst_name must be a string or last_name must be a string\n'
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
