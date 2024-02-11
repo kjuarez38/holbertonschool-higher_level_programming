@@ -3,11 +3,20 @@
 
 
 def text_indentation(text):
-    """Prints a text with 2 new lines"""
-    if type(text) is not str:
+    """Function that prints a text with 2 new lines"""
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for char in text:
-        if char in [".", "?", ":"]:
-            print(char, end='\n\n')
-        else:
-            print(char, end='')
+
+    new_line_flag = False
+    for idx, char in enumerate(text):
+        if idx > 0:
+            previous_char = text[idx - 1]
+            if previous_char in [".", "?", ":"]:
+                print("\n")
+                new_line_flag = True
+                if char == ' ':
+                    continue
+        if new_line_flag and char == ' ':
+            continue
+        print(char, end="")
+        new_line_flag = False
