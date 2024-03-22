@@ -6,5 +6,4 @@ SELECT genres.name AS genre,
         INNER JOIN tv_show_genres 
         ON genres.id = tv_show_genres.genre_id
 GROUP BY genres.name
-HAVING COUNT(tv_show_genres.show_id) > 0
 ORDER BY COUNT(tv_show_genres.show_id) DESC;
