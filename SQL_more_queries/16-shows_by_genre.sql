@@ -7,4 +7,4 @@ SELECT s.`title`, t.`name`
 
        LEFT JOIN `tv_genres` AS t
        ON t.`id` = g.`genre_id`
- ORDER BY s.`title`;
+ ORDER BY s.`title`, t.`name`;
