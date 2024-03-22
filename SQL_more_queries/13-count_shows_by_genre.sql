@@ -3,7 +3,7 @@
 SELECT g.`id`, g.`name`, 
     COUNT(s.`id`) AS `number_of_shows`
   FROM `genres` AS g
-        LEFT JOIN `shows` AS s
+        INNER JOIN `shows` AS s
         ON g.`id` = s.`genre_id`
- GROUP BY g.`id`, g.`name`
- ORDER BY g.`id`;
+ GROUP BY g.`name`
+ ORDER BY number_of_shows DESC, g.`name`;
