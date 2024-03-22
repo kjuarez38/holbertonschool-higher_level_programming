@@ -1,6 +1,6 @@
--- 14.my_genres.sql starts here
--- write a script that uses the hbtn_0d_tvshows database to lists all genres of the show Dexter.
-SELECT g.`name`
+-- 15.comedy_only.sql starts here
+-- write a script that lists all Comedy shows in the database hbtn_0d_tvshows
+SELECT g.`title`
   FROM `tv_shows` AS g
        INNER JOIN `tv_show_genres` AS s
        ON g.`id` = s.`genre_id`
