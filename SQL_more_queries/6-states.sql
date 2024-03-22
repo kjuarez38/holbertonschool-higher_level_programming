@@ -4,4 +4,5 @@ CREATE DATABASE
 CREATE TABLE IF NOT EXISTS `hbtn_0d_usa`.`states` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(256) NOT NULL,
+    PRIMARY KEY (`id`)
 );
